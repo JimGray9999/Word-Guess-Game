@@ -6,5 +6,8 @@ ul li {
 	display: inline-block;
 	font-family: 'Eczar', serif;
 	font-size: 24px;
-	letter-spacing: 2em;
+	text-align: center;
+	letter-spacing: 1.05em;
+	list-style-position: inside;
+	border: 1px solid black;
 }
