@@ -11,3 +11,7 @@ ul li {
 	list-style-position: inside;
 	border: 1px solid black;
 }
+
+.hide {
+	display: inline-block;
+}

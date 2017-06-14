@@ -1,18 +1,18 @@
 // declare variables for game
 
 // declare initial arrays
-var answerBank = ["Apple", "Forest", "Romper", "Tasty", "Floof", "Covfefe", "JQuery", "Moo"];
+var answerBank = ["apple", "forest", "romper", "tasty", "floof", "covfefe", "jquery", "moo", "arrays"];
 var guessesMade = []; // track letters chosen
 var displayAnswer = []; // holds number of _ based on answer.length
 var guessAnswer = []; // player's current guess
 
 // select random choice in answerBank to start the game
-var randomChoice = Math.floor((Math.random() * answerBank.length) + 1);
+var randomChoice = Math.floor(Math.random() * answerBank.length);
 var answer = answerBank[randomChoice];
 
 // display the proper # of _'s
-var startAnswer = displayAnswer.fill("_",0, answer.length)
-document.getElementById("theAnswer").innerHTML = startAnswer;
+var startAnswer = displayAnswer.fill("_ ",0, answer.length)
+document.getElementById("theAnswer").innerHTML = "<h3> " + startAnswer + "</h3>";
 
 // display alert on result of game
 function gameOver(result){
@@ -39,7 +39,7 @@ function newGame() {
 
 	// display the proper # of _'s
 	startAnswer = displayAnswer.fill("_",0, answer.length)
-	document.getElementById("theAnswer").innerHTML = startAnswer;
+	document.querySelector("#theAnswer").innerHTML = startAnswer;
 
 	// reset hangman image
 	document.getElementById("hangman").src = "assets/images/Stage1.jpg";
@@ -47,6 +47,8 @@ function newGame() {
 	// reset displayed number of guesses
 	document.querySelector("#tracker").innerHTML = "<h2> 0 of 6</h2>";
 }
+
+console.log("The answer is: " + answer);
 
 function wrongGuess(count) {
 	var htmlUpdate = "<h2> " + count + " of 6</h2>";
@@ -91,14 +93,14 @@ document.onkeyup = function(event) {
 	// add latest guess to guessesMade
 	guessesMade.push(guess);
 
-	if (correctGuess === false){
-		wrongGuess(guessesMade.length);
+	if (correctGuess === true){
+		document.querySelector("#theAnswer").innerHTML = displayAnswer;
+		if (displayAnswer === answer){
+		gameOver("win"); // if the displayAnswer matches the answer, player wins
+		} else {
+			return;
+		}
 	} else {
-		return;
-	}
-
-	// if the displayAnswer matches the answer, player wins
-	if (displayAnswer === answer){
-		gameOver("win");
+		wrongGuess(guessesMade.length);
 	}
 }
