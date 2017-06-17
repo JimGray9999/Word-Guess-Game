@@ -26,7 +26,7 @@
 			<p>Select a letter, try to guess the secret word before your chances run out</p>
 			<p>Good luck!</p>
 		<div class="btn-group-lg" role="group" aria-label="...">
-			<button type="button" class="btn btn-default" onclick="newGame()">New Game</button>
+			<button id="newGameBtn" type="button" class="btn btn-default" onclick="newGame()">New Game</button>
 			<button type="button" class="btn btn-default" onclick="playMuzak()">Play Muzak</button>
 			<button type="button" class="btn btn-default" onclick="pauseMuzak()">Pause Muzak (but why?)
 			</button>
@@ -39,72 +39,77 @@
 		<div class="row">
 			<h2>Choices left</h2>
 			<h2 id="tracker">0 of 6</h2>
-			<ul>
-				<li id="A">A</li>
-				<li id="B">B</li>
-				<li id="C">C</li>
-				<li id="D">D</li>
-				<li id="E">E</li>
-				<li id="F">F</li>
-				<li id="G">G</li>
-				<li id="H">H</li>
-				<li id="I">I</li>
-				<li id="J">J</li>
-				<li id="K">K</li>
-				<li id="L">L</li>
-				<li id="M">M</li>
-				<li id="N">N</li>
-				<li id="O">O</li>
-				<li id="P">P</li>
-				<li id="Q">Q</li>
-				<li id="R">R</li>
-				<li id="S">S</li>
-				<li id="T">T</li>
-				<li id="U">U</li>
-				<li id="V">V</li>
-				<li id="W">W</li>
-				<li id="X">X</li>
-				<li id="Y">Y</li>
-				<li id="Z">Z</li>
-			</ul>
+			<div class="col-sm-12 pull-left">
+				<ul>
+					<li id="A">A</li>
+					<li id="B">B</li>
+					<li id="C">C</li>
+					<li id="D">D</li>
+					<li id="E">E</li>
+					<li id="F">F</li>
+					<li id="G">G</li>
+					<li id="H">H</li>
+					<li id="I">I</li>
+					<li id="J">J</li>
+					<li id="K">K</li>
+					<li id="L">L</li>
+					<li id="M">M</li>
+				</ul>
+			</div>
+			<div class="col-sm-12 pull-right">
+				<ul>
+					<li id="N">N</li>
+					<li id="O">O</li>
+					<li id="P">P</li>
+					<li id="Q">Q</li>
+					<li id="R">R</li>
+					<li id="S">S</li>
+					<li id="T">T</li>
+					<li id="U">U</li>
+					<li id="V">V</li>
+					<li id="W">W</li>
+					<li id="X">X</li>
+					<li id="Y">Y</li>
+					<li id="Z">Z</li>
+				</ul>
+			</div>
 		</div>
-	</div>
-
-	<!-- Guesses made -->
-	<div class="row">
-		<div class="col-md-12">
-			<h2>Guesses made:</h2>
-			<!-- add letters after selected -->
-			<ul>
-				<li class="hide">A</li>
-				<li class="hide">B</li>
-				<li class="hide">C</li>
-				<li class="hide">D</li>
-				<li class="hide">E</li>
-				<li class="hide">F</li>
-				<li class="hide">G</li>
-				<li class="hide">H</li>
-				<li class="hide">I</li>
-				<li class="hide">J</li>
-				<li class="hide">K</li>
-				<li class="hide">L</li>
-				<li class="hide">M</li>
-				<li class="hide">N</li>
-				<li class="hide">O</li>
-				<li class="hide">P</li>
-				<li class="hide">Q</li>
-				<li class="hide">R</li>
-				<li class="hide">S</li>
-				<li class="hide">T</li>
-				<li class="hide">U</li>
-				<li class="hide">V</li>
-				<li class="hide">W</li>
-				<li class="hide">X</li>
-				<li class="hide">Y</li>
-				<li class="hide">Z</li>
-			</ul>
+		<!-- Guesses made -->
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Guesses made:</h2>
+				<!-- add letters after selected -->
+				<ul>
+					<li class="hide">A</li>
+					<li class="hide">B</li>
+					<li class="hide">C</li>
+					<li class="hide">D</li>
+					<li class="hide">E</li>
+					<li class="hide">F</li>
+					<li class="hide">G</li>
+					<li class="hide">H</li>
+					<li class="hide">I</li>
+					<li class="hide">J</li>
+					<li class="hide">K</li>
+					<li class="hide">L</li>
+					<li class="hide">M</li>
+					<li class="hide">N</li>
+					<li class="hide">O</li>
+					<li class="hide">P</li>
+					<li class="hide">Q</li>
+					<li class="hide">R</li>
+					<li class="hide">S</li>
+					<li class="hide">T</li>
+					<li class="hide">U</li>
+					<li class="hide">V</li>
+					<li class="hide">W</li>
+					<li class="hide">X</li>
+					<li class="hide">Y</li>
+					<li class="hide">Z</li>
+				</ul>
+			</div>
 		</div>
-	
+		
 		<div class="row">
 		<!-- To do: Display a hanging post -->
 			<div class="col-sm-6">

@@ -13,13 +13,16 @@ body {
 	border-spacing: 10px;
 }
 
+h2 {
+	text-align: center;
+}
+
 .chosenLetter {
 	text-decoration: line-through;
 }
 
 ul li {
 	display: inline-block;
-	font-family: 'Eczar', serif;
 	font-size: 24px;
 	text-align: center;
 	letter-spacing: 1.05em;

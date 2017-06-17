@@ -55,6 +55,9 @@ function newGame() {
 
 	// reset displayed number of guesses
 	document.querySelector("#tracker").innerHTML = "<h2> 0 of 6</h2>";
+
+	// disable New Game button until game over
+	document.getElementById("#newGameBtn").className = "btn btn-default disabled";
 }
 
 console.log("The answer is: " + answer); //console log entry for troubleshooting
@@ -97,10 +100,7 @@ document.onkeyup = function(event) {
 		}
 	} else {
 		return;
-	}
-
-	// add latest guess to guessesMade
-	guessesMade.push(guess);
+	}	
 
 	// check if a correct guess was made
 	if (correctGuess === true){
@@ -112,10 +112,13 @@ document.onkeyup = function(event) {
 			return;
 		}
 	} else {
+		guessesMade.push(guess);
 		wrongGuess(guessesMade.length);
 	}
 }
 
+
+// audio functions
 function playMuzak() {
 	muzak.play();
 };
