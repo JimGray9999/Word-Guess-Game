@@ -1,3 +1,18 @@
+body {
+	background-image: url("../images/background.jpg");
+	color: #fff;
+	font-family: 'Eczar', serif;
+}
+
+.jumbotron {
+	background-color: green;
+	text-align: center;
+}
+
+.button {
+	border-spacing: 10px;
+}
+
 .chosenLetter {
 	text-decoration: line-through;
 }
@@ -14,4 +29,8 @@ ul li {
 
 .hide {
 	display: inline-block;
+}
+
+.display {
+	text-decoration: underline;
 }

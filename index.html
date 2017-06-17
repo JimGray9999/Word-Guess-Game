@@ -16,9 +16,23 @@
 	<title>Hangman!</title>
 </head>
 <body>
-	
-	<p>Let's Play Hangman!</p>
-	<p>Select a letter:</p>
+	<!-- audio file source for buttons -->
+	<audio id="muzak" src="assets/audio/elevator_world_proud_music_preview.mp3" type="audio/mp3">
+	</audio>
+
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Let's Play Hangman!</h1>
+			<p>Select a letter, try to guess the secret word before your chances run out</p>
+			<p>Good luck!</p>
+		<div class="btn-group-lg" role="group" aria-label="...">
+			<button type="button" class="btn btn-default" onclick="newGame()">New Game</button>
+			<button type="button" class="btn btn-default" onclick="playMuzak()">Play Muzak</button>
+			<button type="button" class="btn btn-default" onclick="pauseMuzak()">Pause Muzak (but why?)
+			</button>
+		</div>
+		</div>	
+	</div>
 	
 	<div class="container">
 	<!-- Choices remaining -->
@@ -97,11 +111,16 @@
 				<img id="hangman" src="assets/images/Stage1.jpg" alt="hangman">
 			</div>
 			<div class="col-sm-3">
-				<h3 id="theAnswer">answer will show here</h3>
+				<h3 id="theAnswer"></h3>
 			</div>
 		</div>
 	</div>
 
+
+	<!-- jQuery for Bootstrap effects only -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" 
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+	</script>
 
 	<!-- JavaScript file for game logic -->
 	<script src="assets/javascript/game.js"></script>

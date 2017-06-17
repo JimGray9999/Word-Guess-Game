@@ -1,7 +1,8 @@
 // declare variables for game
 
 // declare initial arrays
-var answerBank = ["apple", "forest", "romper", "tasty", "floof", "covfefe", "jquery", "moo", "arrays"];
+var answerBank = ["apple", "forest", "romper", "tasty", "floof", "covfefe", 
+				  "jquery", "moo", "arrays", "tableau", "meow", "flour"];
 var guessesMade = []; // track letters chosen
 var displayAnswer = []; // holds number of _ based on answer.length
 var guessAnswer = []; // player's current guess
@@ -10,9 +11,14 @@ var guessAnswer = []; // player's current guess
 var randomChoice = Math.floor(Math.random() * answerBank.length);
 var answer = answerBank[randomChoice];
 
+var muzak = document.getElementById("muzak");
+
 // display the proper # of _'s
-var startAnswer = displayAnswer.fill("_ ",0, answer.length)
-document.getElementById("theAnswer").innerHTML = "<h3> " + startAnswer + "</h3>";
+for (i = 0 ; i < answer.length ; i++){
+	displayAnswer.push("_");
+}
+
+document.getElementById("theAnswer").innerHTML = "<h3> " + displayAnswer.join(' ') + "</h3>";
 
 // display alert on result of game
 function gameOver(result){
@@ -22,11 +28,12 @@ function gameOver(result){
 		alert("You Win!"); // matched the word
 	}
 	var again = confirm("Play again?");
-	if (again === true){
+	if (again){
 		newGame();
 	}
 };
 
+// reset variables, board, start new game
 function newGame() {
 	// reset initial arrays
 	guessesMade = []; // track letters chosen
@@ -34,12 +41,14 @@ function newGame() {
 	guessAnswer = []; // player's current guess
 
 	// select new random choice from answerBank to start the game
-	randomChoice = Math.floor((Math.random() * answerBank.length) + 1);
+	randomChoice = Math.floor(Math.random() * answerBank.length);
 	answer = answerBank[randomChoice];
 
 	// display the proper # of _'s
-	startAnswer = displayAnswer.fill("_",0, answer.length)
-	document.querySelector("#theAnswer").innerHTML = startAnswer;
+	for (i = 0 ; i < answer.length ; i++){
+		displayAnswer.push("_");
+	}
+	document.getElementById("theAnswer").innerHTML = "<h3> " + displayAnswer.join(' ') + "</h3>";
 
 	// reset hangman image
 	document.getElementById("hangman").src = "assets/images/Stage1.jpg";
@@ -48,7 +57,7 @@ function newGame() {
 	document.querySelector("#tracker").innerHTML = "<h2> 0 of 6</h2>";
 }
 
-console.log("The answer is: " + answer);
+console.log("The answer is: " + answer); //console log entry for troubleshooting
 
 function wrongGuess(count) {
 	var htmlUpdate = "<h2> " + count + " of 6</h2>";
@@ -73,29 +82,31 @@ function wrongGuess(count) {
 // event to capture key pressed //
 document.onkeyup = function(event) {
 	var guess = String.fromCharCode(event.keyCode).toLowerCase();
-	console.log("You selected " + guess);
+	console.log("You selected " + guess); //console log entry for troubleshooting
 
-	var correctGuess = false;
+	var correctGuess = false; // reset boolean for correct guess made
 
-	document.getElementById("A").className = "chosenLetter";
-
-	// logic to match letter with answer
-		// loop thru the answer to check for a match
-		// use indexof to check the answer for letter matches
-		// update the displayed answer with the answers made
-	for (i = 0; i < answer.length ; i++){
-		if (guess === answer[i]){
-			displayAnswer[i] = guess;
-			correctGuess = true;
+	// check if key press is from a to z (keycodes 65-90)
+	// update the displayed answer with the answers made
+	if (event.keyCode >= 65 && event.keyCode <= 90) {
+		for (i = 0; i < answer.length ; i++){
+			if (guess === answer[i]){
+				displayAnswer[i] = guess;
+				correctGuess = true;
+			}
 		}
+	} else {
+		return;
 	}
 
 	// add latest guess to guessesMade
 	guessesMade.push(guess);
 
+	// check if a correct guess was made
 	if (correctGuess === true){
-		document.querySelector("#theAnswer").innerHTML = displayAnswer;
-		if (displayAnswer === answer){
+		document.getElementById("theAnswer").innerHTML = "<h3> " + displayAnswer.join(' ') + "</h3>";
+
+		if (displayAnswer.join('') === answer){
 		gameOver("win"); // if the displayAnswer matches the answer, player wins
 		} else {
 			return;
@@ -103,4 +114,12 @@ document.onkeyup = function(event) {
 	} else {
 		wrongGuess(guessesMade.length);
 	}
+}
+
+function playMuzak() {
+	muzak.play();
+};
+
+function pauseMuzak() {
+	muzak.pause();
 }
