@@ -2,7 +2,7 @@
 
 // declare initial arrays
 var answerBank = ["apple", "forest", "romper", "tasty", "floof", "covfefe", 
-				  "jquery", "moo", "arrays", "tableau", "meow", "flour"];
+				  "jquery", "moo", "arrays", "tableau", "meow", "flour","apricots"];
 var guessesMade = []; // track letters chosen
 var displayAnswer = []; // holds number of _ based on answer.length
 var guessAnswer = []; // player's current guess
