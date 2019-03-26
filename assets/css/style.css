@@ -11,6 +11,13 @@ body {
 
 .button {
 	border-spacing: 10px;
+	border-style: solid;
+	border-color: black;
+	
+}
+
+h1 {
+	font-size: 48px;
 }
 
 h2 {
@@ -36,4 +43,8 @@ ul li {
 
 .display {
 	text-decoration: underline;
+}
+
+#tracker {
+	font-size: 24px;
 }

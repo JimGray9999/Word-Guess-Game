@@ -24,56 +24,60 @@
 	<div class="jumbotron">
 		<div class="container">
 			<h1>Let's Play Hangman!</h1>
-			<p>Select a letter, try to guess the secret word before your chances run out</p>
+			<p>Select a letter, try to guess the secret word before your chances run out...</p>
 			<p>Good luck!</p>
 		<div class="btn-group-lg" role="group" aria-label="...">
-			<button id="newGameBtn" type="button" class="btn btn-default" onclick="newGame()">New Game</button>
-			<button type="button" class="btn btn-default" onclick="playMuzak()">Play Muzak</button>
-			<button type="button" class="btn btn-default" onclick="pauseMuzak()">Pause Muzak</button>
+			<button id="newGameBtn" type="button" class="btn btn-danger" onclick="newGame()">New Game</button>
+			<button type="button" class="btn btn-info" onclick="playMuzak()">Play Muzak</button>
+			<button type="button" class="btn btn-success" onclick="pauseMuzak()">Pause Muzak</button>
 		</div>
 		</div>	
 	</div>
 	
 	<div class="container">
 	<!-- Choices remaining -->
-		<div class="row">
+	<div class="row justify-content-center">
+		<div class="col-sm-6">
 			<h2>Choices left</h2>
-			<h2 id="tracker">0 of 6</h2>
+		</div>
+		<div class="col-sm-6">
+			<p id="tracker">0 of 6</p>
+		</div>
+		</div>
 			<div class="col-sm-12 pull-left">
 				<ul>
-					<li id="A">A</li>
-					<li id="B">B</li>
-					<li id="C">C</li>
-					<li id="D">D</li>
-					<li id="E">E</li>
-					<li id="F">F</li>
-					<li id="G">G</li>
-					<li id="H">H</li>
-					<li id="I">I</li>
-					<li id="J">J</li>
-					<li id="K">K</li>
-					<li id="L">L</li>
-					<li id="M">M</li>
+					<li id="A"><button>A</button></li>
+					<li id="B"><button>B</button></li>
+					<li id="C"><button>C</button></li>
+					<li id="D"><button>D</button></li>
+					<li id="E"><button>E</button></li>
+					<li id="F"><button>F</button></li>
+					<li id="G"><button>G</button></li>
+					<li id="H"><button>H</button></li>
+					<li id="I"><button>I</button></li>
+					<li id="J"><button>J</button></li>
+					<li id="K"><button>K</button></li>
+					<li id="L"><button>L</button></li>
+					<li id="M"><button>M</button></li>
 				</ul>
 			</div>
 			<div class="col-sm-12 pull-right">
 				<ul>
-					<li id="N">N</li>
-					<li id="O">O</li>
-					<li id="P">P</li>
-					<li id="Q">Q</li>
-					<li id="R">R</li>
-					<li id="S">S</li>
-					<li id="T">T</li>
-					<li id="U">U</li>
-					<li id="V">V</li>
-					<li id="W">W</li>
-					<li id="X">X</li>
-					<li id="Y">Y</li>
-					<li id="Z">Z</li>
+					<li id="N"><button>N</button></li>
+					<li id="O"><button>O</button></li>
+					<li id="P"><button>P</button></li>
+					<li id="Q"><button>Q</button></li>
+					<li id="R"><button>R</button></li>
+					<li id="S"><button>S</button></li>
+					<li id="T"><button>T</button></li>
+					<li id="U"><button>U</button></li>
+					<li id="V"><button>V</button></li>
+					<li id="W"><button>W</button></li>
+					<li id="X"><button>X</button></li>
+					<li id="Y"><button>Y</button></li>
+					<li id="Z"><button>Z</button></li>
 				</ul>
 			</div>
-		</div>
 		<!-- Guesses made -->
 		<div class="row">
 			<div class="col-md-12">
