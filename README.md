@@ -1,11 +1,3 @@
-## Hangman Game
+## Word Guess Game
 
-A javascript game of the classic hangman game
-
-### TODO
-
-- make buttons clickable
-  - add guess event to each button
-- show hanging stage before first wrong guess
-
-- work on layout changes
+A Word Guessing Game, originally designed for my coding boot camp class.
