@@ -50,9 +50,6 @@ function newGame() {
 	}
 	document.getElementById("theAnswer").innerHTML = "<h3> " + displayAnswer.join(' ') + "</h3>";
 
-	// reset hangman image
-	document.getElementById("hangman").src = "assets/images/Stage1.jpg";
-
 	// reset displayed number of guesses
 	document.querySelector("#tracker").innerHTML = "<h2> 0 of 6</h2>";
 
@@ -116,7 +113,6 @@ document.onkeyup = function(event) {
 		wrongGuess(guessesMade.length);
 	}
 }
-
 
 // audio functions
 function playMuzak() {
