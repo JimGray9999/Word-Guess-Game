@@ -1,7 +1,4 @@
-# Hangman Game
-
-## How to Play Hangman: 
-[Wikihow rules]http://www.wikihow.com/Play-Hangman
+# Word Guess Game
 
 ## Gameplay
 - choose a random word (setup an array of a variety of words)
@@ -17,14 +14,15 @@
         - change display of letter(s) from _ to the letter
         - mark as a selected letter
     - if it is not:
-        - show next part of the Hangman
+        - decrease the guesses lefr by one
         - mark as a selected letter
 
-- while the full Hangman is not displayed, allow the player to select again
+- while there are guesses left, allow the player to select again
     - continue until either:
         - word is solved (player wins)
-        - Hangman is fully shown (player loses)
+        - player runs out of guesses (player loses)
 
 ## Display
 
 - Show all 26 letters, change to a strikethrough for any letter selected
+- A counter to keep track of number of guesses left
